@@ -99,20 +99,19 @@ Project* that only he has access to as a private working space
 * Explain that currently nothing is deployed in this project and the
 developer wants to provision the application in his project using his
 forked repository created in previous steps
-* Click on *Add to Project*
-
 * Explain that using templates, developer can deploy an entire
-application with all its components at once. Templates are categorized into different
-sections to facilitate finding them. These categories are customizable and you can add
-whatever category that makes sense to your organization in the catalog. You can also
-use the search box to filter templates based on tags or template name.
-* Scroll down and click on the *Uncategorized* category
+application with all its components at once. 
 
-image::msa-ondemand-template-browse.png[Application Template Browse,width=920,align=center]
+* Explain that the service catalog by default among other things the templates that are available 
+in the *openshift* namespaces since they are global and available to all projects and 
+users. However in this project you have a template for the *inventory* servic that the developer has created. 
+You can deploy project templates by clicking on *Add to Project* and then *Add from Project*. 
 
-* Scroll down and click on the *inventory* template
+image::msa-ondemand-template-from-project.png[Application Template Browse,width=800,align=center]
 
-image::msa-ondemand-template-inventory.png[Application Template,width=920,align=center]
+* Click on the *inventory* template and then on *Next* and then *Next*
+
+image::msa-ondemand-template-inventory.png[Application Template,width=800,align=center]
 
 * Explain that developer can customize the deployment via the template
 parameters. For example the *Git repository* and *Git branch/tag* parameters

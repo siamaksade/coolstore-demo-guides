@@ -39,7 +39,7 @@ clicking on *CoolStore PROD* project, and in the *Web UI* service group, clickin
 
 * Explain Open API specification (Swagger) and JBoss Fuse generating Swagger docs
 * In the OpenShift web console, go to *CoolStore PROD* project
-* In the *Coolstore GW* service group, click on the route url to go to the Swagger UI
+* In the *Coolstore GW* window, click on the route url to go to the Swagger UI
 
 image::msa-int-swagger-ui.png[Coolstore GW Swagger UI,width=800,align=center]
 
