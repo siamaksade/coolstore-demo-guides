@@ -1,0 +1,35 @@
+modules:
+  msa-coolstore-overview:
+    name: CoolStore Demo Application Overview
+  msa-overview:
+    name: Containerized Microservices
+    requires:
+      - msa-coolstore-overview
+  msa-agile-integration:
+    name: Agile Integration for Microservices
+    requires:
+      - msa-coolstore-overview
+  msa-service-resilience:
+    name: Service Resilience and Fault Tolerance
+    requires:
+      - msa-coolstore-overview
+  msa-on-demand-env:
+    name: Creating On-Demand Environment
+  msa-dev-productivity-jbds:
+    name: Increase Developer Productivity with Containers (with JBoss Developer Studio)
+  msa-pr-code-review-with-jbds:
+    name: Building Quality into Development Process (with JBoss Developer Studio)
+    requires:
+      - msa-dev-productivity-jbds
+      - msa-on-demand-env
+  msa-pr-code-review-without-jbds:
+    name: Building Quality into Development Process (without JBoss Developer Studio)
+    requires:
+      - msa-on-demand-env
+  msa-cicd-eap:
+    name: Increasing Delivery Speed with CI/CD
+    requires:
+      - msa-coolstore-overview
+      - msa-pr-code-review-without-jbds
+  msa-continuous-security:
+    name: Continuous Security Compliance for Containers
