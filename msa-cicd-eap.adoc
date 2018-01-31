@@ -64,13 +64,16 @@ new version and that would happen after approval.
 
 image::msa-cicd-eap-projectlist.png[Projects List,width=820,align=center]
 
-* Scroll down to the *Inventory Live* service
+* Scroll down to the *Inventory* service
 * Explain that there are two version of inventory deployed in
 production: *inventory-blue* and *inventory-green*. The traffic split shows
 that 100% of traffic is going to *inventory-blue* and 0% is going to
-*inventory-green*. Comparing the deployment times shows that the code
-changes are deployed to the *inventory-green* (deployed 7 minutes ago in
-the screenshot). Adjust the traffic split to other ratios (for example
+*inventory-green*. Comparing the image ids you can see that they are running 
+different versions of the inventory service. That's because the changes 
+are deployed into to the *inventory-green* while *inventory-blue* still 
+runs the previous version and receives all the traffic not to affect production 
+customers before the changes are verified to work as expected in production. Note that 
+adjusting the traffic split between *inventory-blue* and *inventory-green* to other ratios (for example
 90% and 10%) allows performing other deployment patterns such as canary
 release or even A/B testing.
 

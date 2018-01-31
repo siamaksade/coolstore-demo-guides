@@ -34,32 +34,32 @@ orders without knowing about the inventory.
 
 
 ### Demonstrate Container Lifecycle Management
-{% if modules.demos_msa-cicd-eap %}
+{% if modules.msa-cicd-eap %}
 
 * Explain OpenShift container health management using
 https://docs.google.com/presentation/d/1bt4k9yB0wDOj0d5WzDCWqftPxIizQ7f5S15LysEGFyQ/edit#slide=id.g1b95a791a8_0_24[the slides]
 * In the OpenShift web console, go to *CoolStore PROD* project
-* Scroll down to find the *Inventory Live* service group
-* Explain that the blue circle shows the number containers that back *inventory-green* service
+* Scroll down to find the *Inventory* group
+* Explain that the blue circle shows the number containers that back *inventory-blue* service
 
 ====
 CAUTION: *Inventory* routes traffic to *inventory-green* and *inventory-blue* services. All traffic by
-default is sent to *inventory-green* and in the rest of this section is mentioned as the active service.
-If all traffic is sent to *inventory-blue* in your environment, perform the instructions on *inventory-blue* instead.
+default is sent to *inventory-blue* and in the rest of this section is mentioned as the active service.
+If all traffic is sent to *inventory-green* in your environment, perform the instructions on *inventory-green* instead.
 ====
 
 image::msa-resilience-inventory.png[Live Inventory Container,width=800,align=center]
 
-* Click on the up arrow to scale the inventory container with 100% traffic (*inventory-green* by default) to two containers.
+* Click on the up arrow to scale the inventory-blue container with 100% traffic to two containers.
 * Explain that in a few seconds, a new identical container is deployed
 and added automatically to the load-balancer. If one container fails,
 there will be another container that can service requests
 
-image::msa-resilience-scaled-bg.png[Scaled Up,width=540,align=center]
+image::msa-resilience-scaled-bg.png[Scaled Up,width=800,align=center]
 
 * Click on the blue circle
-* Explain that the list of pods backing the *inventory-green* is displayed
-* Click on one of the containers with a name similar to *inventory-green-n-nnnnn*
+* Explain that the list of pods backing the *inventory-blue* is displayed
+* Click on one of the containers with a name similar to *inventory-blue-n-nnnnn*
 * Explain that you can see the pod details such as
 ** The container image that is deployed
 ** The host that container is deployed on
@@ -72,11 +72,11 @@ image::msa-resilience-delete-pod-bg.png[Delete Pod,width=920,align=center]
 
 * Click on *Overview* in the left sidebar menu
 * Explain that OpenShift immediately realizes that number of pods
-backing the *CoolStore GW* service is reduced to 1 while it was declared
+backing the *Inventory Blue* service is reduced to 1 while it was declared
 to have 2 pods backing this service for high-availability. OpenShift
 restarts the removed pod in order to bring the number of pods back to 2 pods.
 
-image::msa-resilience-auto-healing-bg.png[Auto Healing,width=540,align=center]
+image::msa-resilience-auto-healing-bg.png[Auto Healing,width=800,align=center]
 
 * Explain that OpenShift allows distinguishing between failures that
 might resolve with a restart and more severe issues that need required
@@ -96,7 +96,7 @@ https://docs.google.com/presentation/d/1bt4k9yB0wDOj0d5WzDCWqftPxIizQ7f5S15LysEG
 and added automatically to the load-balancer. If one container fails,
 there will be another container that can service requests
 
-image::msa-resilience-scaled.png[Scaled Up,width=540,align=center]
+image::msa-resilience-scaled.png[Scaled Up,width=800,align=center]
 
 * Click on the blue circle
 * Explain that the list of pods backing the *inventory* is displayed
@@ -113,11 +113,11 @@ image::msa-resilience-delete-pod.png[Delete Pod,width=920,align=center]
 
 * Click on *Overview* in the left sidebar menu
 * Explain that OpenShift immediately realizes that number of pods
-backing the *CoolStore GW* service is reduced to 1 while it was declared
+backing the *Inventory* service is reduced to 1 while it was declared
 to have 2 pods backing this service for high-availability. OpenShift
 restarts the removed pod in order to bring the number of pods back to 2 pods.
 
-image::msa-resilience-auto-healing.png[Auto Healing,width=540,align=center]
+image::msa-resilience-auto-healing.png[Auto Healing,width=800,align=center]
 
 * Explain that OpenShift allows distinguishing between failures that
 might resolve with a restart and more severe issues that need required
